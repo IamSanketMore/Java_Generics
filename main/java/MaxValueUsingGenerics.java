@@ -1,38 +1,27 @@
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
-public class MaxValueUsingGenerics<s1>
+import java.util.*;
+public class MaxValueUsingGenerics<S>
 {
-   public s1 [] arrayInput;
+    private S[] inputArray;
 
-   //get arrayInput
-    public s1[] getArrayInput()
+    public MaxValueUsingGenerics(S[] inputArray)
     {
-        return arrayInput;
+        this.inputArray = inputArray;
     }
 
-    //Set arrayInput
-    public void setArrayInput(s1[] arrayInput)
+    public static <T> T findMax(T[] myNumber)
     {
-        this.arrayInput = arrayInput;
-    }
-    //Constructor
-    public MaxValueUsingGenerics(s1[] arrayInput)
-    {
-        this.arrayInput = arrayInput;
+        List myNumberList = Arrays.asList(myNumber);
+        T max = (T) Collections.max( myNumberList );
+        toPrint(max);
+        return max;
     }
 
-    public static <s1> Comparable findMax(s1[] arr)
+    private static <S> void toPrint(S a)
     {
-        List arrList = Arrays.asList(arr);
-        Comparable maxValue = Collections.max(arrList);
-
-        return maxValue;
+        System.out.println(a);
     }
-    // --------------------- MAin Method -----------------------------------
     public static void main(String[] args)
     {
-
+        System.out.println(" ************ Java Generics ********** ");
     }
 }
