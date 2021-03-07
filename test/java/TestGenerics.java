@@ -5,62 +5,61 @@ public class TestGenerics
 {
     //------------------- Test for Integers ----------------------------------------
         @Test
-        public void givenFirstNumberIsMaxNumberThenReturnFirstNumberAsMax() {
-
-            Integer maximum = MaxValueUsingGenerics.maximumInteger(800, 70, 115);
-            Assert.assertEquals((Integer) 800, maximum);
+        public void givenFirstNumberIsMaxNumberThenReturnFirstNumberAsMax()
+        {
+            Object[] arr = {10, 2, 1,5,4};
+            Assert.assertEquals(arr[0], MaxValueUsingGenerics.findMax(arr));
         }
 
         @Test
         public void givenSecondNumberIsMaXNumberThenReturnSecondNumberAsMaximum() {
-            Integer maximum1 = MaxValueUsingGenerics.maximumInteger(5, 250, 112);
-            Assert.assertEquals((Integer) 250, maximum1);
+            Object[] arr = {10, 12, 1,5,4};
+            Assert.assertEquals(arr[1], MaxValueUsingGenerics.findMax(arr));
         }
 
         @Test
         public void givenThirdNumberIsMaXNumberThenReturnThirdNumberAsMaximum() {
-            Integer maximum2 = MaxValueUsingGenerics.maximumInteger(109, 200, 999);
-            Assert.assertEquals((Integer) 999, maximum2);
+            Object[] arr = {10, 2, 13,5,4};
+            Assert.assertEquals(arr[2], MaxValueUsingGenerics.findMax(arr));
         }
 
         //------------------- Test for Float --------------------------
 
         @Test
-        public void givenFloatFirstNumberIsMaxNumberThenReturnFirstNumberAsMax() {
-
-            Double maximum = MaxValueUsingGenerics.maximumFloat(14.3, 1.2, 2.3);
-            Assert.assertEquals((Double) 14.3, maximum);
+        public void givenFloatFirstNumberIsMaxNumberThenReturnFirstNumberAsMax()
+        {
+            Object[] arr = {3.1, 2.1, 1.4,1.2,2.21};
+            Assert.assertEquals(arr[0], MaxValueUsingGenerics.findMax(arr));
         }
 
         @Test
         public void givenFloatSecondNumberIsMaXNumberThenReturnSecondNumberAsMaximum() {
-            Double maximum = MaxValueUsingGenerics.maximumFloat(1.2,14.3, 2.3);
-            Assert.assertEquals((Double) 14.3, maximum);
+            Object[] arr = {3.1, 7.1, 1.4,1.2,2.21};
+            Assert.assertEquals(arr[1], MaxValueUsingGenerics.findMax(arr));
         }
 
         @Test
         public void givenFloatThirdNumberIsMaXNumberThenReturnThirdNumberAsMaximum() {
-            Double maximum = MaxValueUsingGenerics.maximumFloat( 1.2, 2.31,14.3);
-            Assert.assertEquals((Double) 14.3, maximum);
+            Object[] arr = {3.1, 2.1, 8.4,1.2,2.21};
+            Assert.assertEquals(arr[2], MaxValueUsingGenerics.findMax(arr));
         }
     //------------------- Test for String--------------------------
 
     @Test
-    public void givenStringFirstNumberIsMaxNumberThenReturnFirstNumberAsMax() {
-
-        String maxString = MaxValueUsingGenerics.maximumString("apple","cat","ball");
-        Assert.assertEquals("apple", maxString);
+    public void givenStringFirstNumberIsMaxNumberThenReturnFirstAsMax() {
+        Object[] arr = {"Peach", "Banana", "Apple"};
+        Assert.assertEquals(arr[0], MaxValueUsingGenerics.findMax(arr));
     }
 
     @Test
-    public void givenStringSecondNumberIsMaXNumberThenReturnSecondNumberAsMaximum() {
-        String maxString = MaxValueUsingGenerics.maximumString("cat","apple","ball");
-        Assert.assertEquals("apple", maxString);
+    public void givenStringSecondNumberIsMaXNumberThenReturnSecondAsMaximum() {
+        Object[] arr = {"Apple", "Peach", "Banana"};
+        Assert.assertEquals(arr[1], MaxValueUsingGenerics.findMax(arr));
     }
 
     @Test
-    public void givenStringThirdNumberIsMaXNumberThenReturnThirdNumberAsMaximum() {
-        String maxString = MaxValueUsingGenerics.maximumString("cat","ball","apple");
-        Assert.assertEquals( "apple", maxString);
+    public void givenStringThirdNumberIsMaXNumberThenReturnThirdAsMaximum() {
+        Object[] arr = {"Banana", "Apple","Peach"};
+        Assert.assertEquals(arr[2], MaxValueUsingGenerics.findMax(arr));
     }
 }
