@@ -43,4 +43,24 @@ public class TestGenerics
             Double maximum = MaxValueUsingGenerics.maximumFloat( 1.2, 2.31,14.3);
             Assert.assertEquals((Double) 14.3, maximum);
         }
+    //------------------- Test for String--------------------------
+
+    @Test
+    public void givenStringFirstNumberIsMaxNumberThenReturnFirstNumberAsMax() {
+
+        String maxString = MaxValueUsingGenerics.maximumString("apple","cat","ball");
+        Assert.assertEquals("apple", maxString);
+    }
+
+    @Test
+    public void givenStringSecondNumberIsMaXNumberThenReturnSecondNumberAsMaximum() {
+        String maxString = MaxValueUsingGenerics.maximumString("cat","apple","ball");
+        Assert.assertEquals("apple", maxString);
+    }
+
+    @Test
+    public void givenStringThirdNumberIsMaXNumberThenReturnThirdNumberAsMaximum() {
+        String maxString = MaxValueUsingGenerics.maximumString("cat","ball","apple");
+        Assert.assertEquals( "apple", maxString);
+    }
 }
