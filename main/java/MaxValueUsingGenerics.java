@@ -1,66 +1,38 @@
-public class MaxValueUsingGenerics
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class MaxValueUsingGenerics<s1>
 {
-    //--------------------Integers -------------------
-    public static int maximumInteger(Integer x, Integer y, Integer z)
+   public s1 [] arrayInput;
+
+   //get arrayInput
+    public s1[] getArrayInput()
     {
-        Integer maxValue = x;
-        if (y.compareTo(maxValue) > 0)
-        {
-            maxValue = y;
-        }
-        if (z.compareTo(maxValue) > 0)
-        {
-            maxValue = z;
-        }
-        return maxValue;
-    }
-    //------------------- Float---------------------------------
-    public static double maximumFloat(Double x, Double y, Double z)
-    {
-        Double maxValueFloat = x;
-        if (y.compareTo(maxValueFloat) > 0)
-        {
-            maxValueFloat = y;
-        }
-        if (z.compareTo(maxValueFloat) > 0)
-        {
-            maxValueFloat = z;
-        }
-        return maxValueFloat;
+        return arrayInput;
     }
 
-    public static String maximumString(String first, String second, String third)
+    //Set arrayInput
+    public void setArrayInput(s1[] arrayInput)
     {
-        int maxValueString = first.length();
-        String letter = first;
-        if (second.length() > maxValueString)
-        {
-            maxValueString = second.length();
-            letter = second;
-        }
-        if (third.length() > maxValueString) {
-            maxValueString = third.length();
-            letter = third;
-        }
-        return letter;
+        this.arrayInput = arrayInput;
     }
-    private static void printMaxValue(Integer maxValue)
+    //Constructor
+    public MaxValueUsingGenerics(s1[] arrayInput)
     {
-        System.out.println(" Maximum Integer number is : " + maxValue);
+        this.arrayInput = arrayInput;
     }
-    private static void printMaxValue(double maxValueFloat)
+
+    public static <s1> Comparable findMax(s1[] arr)
     {
-        System.out.println(" Maximum Float number is : " + maxValueFloat);
-    }
-    private static void printMaxValue(String maxValueString)
-    {
-        System.out.println(" Maximum String is : " + maxValueString);
+        List arrList = Arrays.asList(arr);
+        Comparable maxValue = Collections.max(arrList);
+
+        return maxValue;
     }
     // --------------------- MAin Method -----------------------------------
     public static void main(String[] args)
     {
-        printMaxValue(maximumInteger(100, 200, 400));
-        printMaxValue(maximumFloat(2.1, 1.1, 3.5));
-        printMaxValue(maximumString("apple","ball","cat"));
+
     }
 }
